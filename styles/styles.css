@@ -1,6 +1,6 @@
 /* General */
 body {
-    font-family: 'Abel', sans-serif;
+    font-family: "Abel", sans-serif;
 }
 :root {
     --color-encabezados: #2F4858;
@@ -30,7 +30,7 @@ nav li {
 nav a {
     color:var(--color-blanco);
     text-decoration: none;
-    font-family: 'Poppins' , sans-serif;
+    font-family: "Poppins" , sans-serif;
     font-weight: 500;
     font-size: 16px;
 }
@@ -43,20 +43,20 @@ main{
     padding: 0 0 40px;
 }
 h1{
-    font-family:'Poppins', sans-serif;
+    font-family:"Poppins", sans-serif;
     font-size: 36px;
     font-weight: 700;
     color: var(--color-encabezados);
     text-align: center;
 }
 h2{
-    font-family: 'Poppins', sans-serif;
+    font-family: "Poppins", sans-serif;
     font-size: 24px;
     font-weight: 600;
     color: var(--color-h2);;
 }
 p{
-    font-family: 'Abel', sans-serif;
+    font-family: "Abel", sans-serif;
     font-size: 18px;
     color: var(--color-texto);
     line-height: 1.6;
