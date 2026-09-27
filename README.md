@@ -1,6 +1,6 @@
 # Mi Portafolio
 
-Breve descripción de mi proyecto
+mi portafolio 
 
 **Lista de Tecnologías**
 
