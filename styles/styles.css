@@ -55,13 +55,13 @@ h1{
     font-weight: 700;
     color: var(--color-encabezados);
     text-align: center;
-    margin-bottom: 30px
+    margin-bottom: 30px;
 }
 h2{
     font-family: "Poppins", sans-serif;
     font-size: 24px;
     font-weight: 600;
-    color: var(--color-h2);;
+    color: var(--color-h2);
 }
 p{
     font-family: "Abel", sans-serif;
@@ -168,4 +168,97 @@ article {
     background-color: var(--color-blanco);
     padding: 20px;
     border-radius: 8px;
+}
+/* Proyectos destacados */
+.proyectos-destacados {
+    max-width: 1100px;
+    margin: 50px auto 20px;
+    padding: 30px;
+    background-color: var(--color-blanco);
+    border-radius: 12px;
+}
+
+.proyectos-destacados h2 {
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.proyectos-descripcion {
+    max-width: 700px;
+    margin: 0 auto 25px;
+    text-align: center;
+}
+
+.proyectos-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.proyecto-card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+    margin: 0;
+    padding: 22px;
+    background-color: var(--color-fondo);
+    border: 1px solid #DCE4E9;
+    border-radius: 8px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.proyecto-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 16px rgba(47, 72, 88, 0.15);
+}
+
+.proyecto-card h3 {
+    font-family: "Poppins", sans-serif;
+    font-size: 18px;
+    color: var(--color-encabezados);
+}
+
+.proyecto-card p {
+    font-size: 16px;
+}
+
+.proyecto-enlace {
+    display: inline-block;
+    margin-top: auto;
+    padding: 9px 14px;
+    border-radius: 6px;
+    background-color: var(--color-h2);
+    color: var(--color-blanco);
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    text-decoration: none;
+    transition: background-color 0.2s ease;
+}
+
+.proyecto-enlace:hover {
+    background-color: var(--color-encabezados);
+}
+
+/* Adaptación a pantallas medianas */
+@media (max-width: 768px) {
+    .proyectos-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .proyectos-destacados {
+        padding: 20px;
+    }
+}
+
+/* Adaptación a celulares */
+@media (max-width: 520px) {
+    .proyectos-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .proyectos-destacados {
+        margin-top: 30px;
+        padding: 16px;
+    }
 }
