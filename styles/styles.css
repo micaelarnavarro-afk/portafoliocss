@@ -110,38 +110,48 @@ article {
     border-radius: 8px;
 }
 /*Hero*/
-.hero{
-    max-width:none;
+.hero {
+    max-width: none;
     margin: 0 auto;
     padding: 0;
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-areas:
+        "imagen"
+        "contenido";
+    grid-template-columns: minmax(0, 1fr);
     gap: 30px;
 }
 
-.hero-contenido{
-    text-align: center;
-    max-width: 900px;
-    margin:0 auto;
-}
-
-.hero-imagen{
+.hero-imagen {
+    grid-area: imagen;
     position: relative;
     width: 100%;
     height: 220px;
     overflow: hidden;
 }
-.hero-imagen img{
+
+.hero-imagen img {
     width: 100%;
     height: 220px;
     object-fit: cover;
     display: block;
 }
-.hero-imagen .boton-contactar{
+
+.hero-imagen .boton-contactar {
     position: absolute;
     bottom: 30px;
     left: 30px;
 }
+
+
+.hero-contenido {
+    grid-area: contenido;
+    text-align: center;
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
 /*Boton*/
 .boton-contactar{
     background-color:var(--color-resaltar);
@@ -189,11 +199,14 @@ article {
     text-align: center;
 }
 
+
 .proyectos-grid {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: 1fr;
     gap: 20px;
 }
+
+
 
 .proyecto-card {
     display: flex;
@@ -241,7 +254,7 @@ article {
 }
 
 /* Adaptación a pantallas medianas */
-@media (max-width: 768px) {
+@media (min-width: 600px) {
     .proyectos-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
@@ -251,14 +264,101 @@ article {
     }
 }
 
-/* Adaptación a celulares */
-@media (max-width: 520px) {
+/* Adaptación a escritorio */
+@media (min-width: 1024px) {
     .proyectos-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
     }
 
     .proyectos-destacados {
+        padding: 30px;
+    }
+}
+
+/* Adaptación a celulares */
+@media (max-width: 599px) {
+    .proyectos-destacados {
         margin-top: 30px;
         padding: 16px;
+    }
+}
+
+/* Navegación adaptable */
+nav {
+    flex-direction: column;
+    gap: 15px;
+}
+
+nav ul {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px 18px;
+}
+
+/* Adaptación a escritorio: 1024px */
+@media (min-width: 1024px) {
+    nav {
+        flex-direction: row;
+    }
+
+    nav ul {
+        gap: 30px;
+    }
+
+    .hero {
+        grid-template-areas: "imagen contenido";
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        align-items: center;
+    }
+}
+
+/* Página de proyectos - Mobile First */
+.proyectos-pagina {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-areas:
+        "titulo"
+        "mics"
+        "portafolio";
+    grid-template-columns: minmax(0, 1fr);
+    gap: 20px;
+}
+
+.proyectos-pagina h1 {
+    grid-area: titulo;
+}
+
+.proyecto-mics {
+    grid-area: mics;
+}
+
+.proyecto-portafolio {
+    grid-area: portafolio;
+}
+
+.proyectos-pagina .proyecto-detalle {
+    margin: 0;
+    min-width: 0;
+}
+
+.proyectos-pagina .proyecto-detalle h2 {
+    margin-bottom: 15px;
+}
+
+.proyectos-pagina .proyecto-detalle p + p {
+    margin-top: 12px;
+}
+
+/* Adaptación a escritorio */
+@media (min-width: 1024px) {
+    .proyectos-pagina {
+        grid-template-areas:
+            "titulo titulo"
+            "mics portafolio";
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 25px;
+        align-items: stretch;
     }
 }
